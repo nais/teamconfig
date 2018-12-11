@@ -25,6 +25,16 @@ Usage of ./teamconfig:
       --team string        Team name that will own the configuration file.
 ```
 
+## Retrieving a Kubeconfig file for a team
+
+By default, running `teamconfig` will output the Kubeconfig to standard output.
+Log messages will appear on stderr. All commands except `--revoke` will output
+a Kubeconfig file.
+
+```
+./teamconfig --team XXX
+```
+
 ## Creating a new team service user
 
 Creating users is an idempotent action; nothing will happen if the service
