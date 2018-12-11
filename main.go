@@ -124,7 +124,7 @@ func clusterExec(cluster string, userConfig *clientcmdapi.Config) error {
 			}
 			deleted = true
 		} else {
-			if errors.IsNotFound(err) {
+			if errors.IsNotFound(err) && !config.Create {
 				log.Debugf("%s: service account '%s' not found", cluster, serviceAccountName)
 			} else {
 				return fmt.Errorf("while deleting service account: %s", err)
