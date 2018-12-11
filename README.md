@@ -60,3 +60,9 @@ Simply pipe the output to [yq](https://github.com/mikefarah/yq):
 ```
 ./teamconfig --team XXX | yq r - --tojson
 ```
+
+## Developing
+
+You need Golang >= 1.11 with `GO111MODULE=on`.
+
+Run `make` in the repository root to build the binary.
