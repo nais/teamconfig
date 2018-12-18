@@ -3,13 +3,14 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"os"
+	"time"
+
 	"k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
-	"os"
-	"time"
 
 	_ "k8s.io/client-go/plugin/pkg/client/auth" // Needed for azure auth side effect
 
@@ -33,7 +34,7 @@ type Config struct {
 
 func DefaultConfig() *Config {
 	return &Config{
-		Clusters: []string{"preprod-fss", "preprod-sbs", "prod-fss", "prod-sbs"},
+		Clusters: []string{"dev-fss", "dev-sbs", "prod-fss", "prod-sbs"},
 	}
 }
 
