@@ -168,7 +168,6 @@ func clusterExec(cluster string, userConfig *clientcmdapi.Config) error {
 
 	userConfig.AuthInfos[cluster] = &authInfo
 	userConfig.Clusters[cluster] = &clientcmdapi.Cluster{
-		InsecureSkipTLSVerify: true,
 		Server:                clientConfig.Host,
 	}
 	userConfig.Contexts[cluster] = &clientcmdapi.Context{
